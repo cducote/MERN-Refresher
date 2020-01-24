@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const Listing = require('../models/Listing')
 
 router.get('/', (req, res, next) => {
-  Listing.find()
+  Listing.find({}, null, {limit: 20})
   .exec()
     .then(docs => {
       console.log(docs);
