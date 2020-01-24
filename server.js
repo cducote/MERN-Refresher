@@ -33,9 +33,12 @@ mongoose.connect(db, { useNewUrlParser: true }).then(() => {
 
 //Quick view
 app.get('/', (req, res) => res.send("BETTY BLOCKS SECRET PROJECT"))
+// app.get('*', (req, res) => {
+//   res.sendFile(`${__dirname}/client/build/index.html`)
+// })
 
 //Routes
-app.use('/listings', listingRoutes)
+app.use('/api/listings', listingRoutes)
 
 app.use((req, res, next) => {
     const error = new Error("Not found");
